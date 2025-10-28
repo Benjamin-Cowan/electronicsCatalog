@@ -1,0 +1,17 @@
+/* Custom offcanvas width to allow more content to be visible
+	 The panelClass from NgbOffcanvas will add the class to the .offcanvas element.
+	 We set a fixed preferred width with a responsive max-width fallback. */
+.custom-offcanvas {
+	width:900px; /* preferred width on larger screens */
+	max-width: 90vw; /* ensure it never exceeds viewport on small screens */
+}
+
+/* When the offcanvas is shown the transform is applied by Bootstrap; ensuring
+	 the width is respected is usually sufficient. For very small screens this
+	 reduces to the viewport width via max-width above. */
+@media (max-width: 700px) {
+	.custom-offcanvas {
+		width: 90vw;
+	}
+}
+
